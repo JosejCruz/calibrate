@@ -1,9 +1,9 @@
 import React from 'react'
 import Plot from 'react-plotly.js';
-import dato from '../data/47';
+import Data from '../data/Data';
 
-function GraficaPlotly() {
-
+function GraficaPlotly(valores1) {
+  const dato = 0
   const data = [
     {
       x: dato.DataX,
