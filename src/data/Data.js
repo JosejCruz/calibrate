@@ -1,4 +1,4 @@
-export const Data = [
+const Data = [
   {
     11: {
       DataX: [
@@ -480,3 +480,4 @@ export const Data = [
     },
   },
 ];
+export default Data;

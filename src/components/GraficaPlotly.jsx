@@ -3,7 +3,8 @@ import Plot from 'react-plotly.js';
 import Data from '../data/Data';
 
 function GraficaPlotly(valores1) {
-  const dato = 0
+  console.log(Data)
+  const dato = Data[0][11]
   const data = [
     {
       x: dato.DataX,
