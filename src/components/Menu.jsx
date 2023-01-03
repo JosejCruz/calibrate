@@ -3,19 +3,28 @@ import GraficaPlotly from "./GraficaPlotly";
 
 function Menu() {
   const [valor1, setValor1] = useState(11);
-  const [valor2, setValor2] = useState(11)
+  const [valor2, setValor2] = useState(11);
+  const [isChecked, setIsChecked] = useState(false)
+  const [isChecked2, setIsChecked2] = useState(false)
+
+  const handleOnChange1 = () => {
+    setIsChecked(!isChecked);
+  };
+  const handleOnChange2 = () => {
+    setIsChecked2(!isChecked2);
+  };
 
   const HandleValores = (e) => {
     setValor1(parseInt(e.target.value));
-    console.log(valor1);
+    //console.log(valor1);
   };
   const HandleValores2 = (e) =>{
     setValor2(parseInt(e.target.value));
-    console.log(valor2)
+    //console.log(valor2)
   }
   return (
     <div>
-      <GraficaPlotly valor1={valor1} valor2={valor2} />
+      <GraficaPlotly valor1={valor1} valor2={valor2} visible1={isChecked} visible2={isChecked2}/>
       <hr />
       <label htmlFor="Valores">GAMMA No. ${valor1}</label>
       <hr />
@@ -52,6 +61,7 @@ function Menu() {
         <option value="45">45</option>
         <option value="47">47</option>
       </select>
+      <input type="checkbox" id="visible1" checked={isChecked} onChange={handleOnChange1}/>visible
       <hr />
       <input type="color" value="#0000ff" disabled={true}/>
       <select onChange={HandleValores2} name="gamma2" id="gamma2">
@@ -86,6 +96,7 @@ function Menu() {
         <option value="45">45</option>
         <option value="47">47</option>
       </select>
+      <input type="checkbox" id="visible2" checked={isChecked2} onChange={handleOnChange2}/>visible
     </div>
   );
 }
